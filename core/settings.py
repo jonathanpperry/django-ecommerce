@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jla1ki%k4f(ak2t@@ph)m6@)6m*0(*qt0$k!qdih!4g%8jp3kd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['e-commercedjangoapp.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'e-commercedjangoapp.herokuapp.com']
 
 
 # Application definition
@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'store.views.categories'
+                'store.context_processors.categories'
             ],
         },
     },
@@ -144,7 +144,7 @@ STATICFILES_DIRS = (
 )
 
 #  Add configuration for static files storage using whitenoise
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # import dj_database_url
 

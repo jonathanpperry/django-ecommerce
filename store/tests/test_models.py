@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
+from django.urls import reverse
 
 from store.models import Category, Product
 
@@ -15,13 +16,16 @@ class TestCategoriesModel(TestCase):
         """
         data = self.data1
         self.assertTrue(isinstance(data, Category))
+        self.assertEqual(str(data), 'django')
 
-    def test_category_model_entry(self):
+    def test_category_url(self):
         """
-        Test Category model default name
+        Test category model slug and URL reverse
         """
         data = self.data1
-        self.assertEqual(str(data), 'django')
+        response = self.client.post(
+            reverse('store:category_list', args=[data.slug]))
+        self.assertEqual(response.status_code, 200)
 
 
 class TestProductsModel(TestCase):
