@@ -65,7 +65,7 @@
                     </button>
 
                     {% if user.is_authenticated %}
-                    <a type="button" role="button" href="{% url "account:logout" %}"
+                    {% comment %} <a type="button" role="button" href="{% url "account:logout" %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -76,9 +76,9 @@
                             </svg>
                         </div>
                         <span class="fs15 fw500">Logout</span>
-                    </a>
+                    </a> {% endcomment %}
                     {% else %}
-                    {% comment %} <a type="button" role="button" href="{% url "account:login" %}"
+                    <a type="button" role="button" href="{% url "account:login" %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -89,7 +89,7 @@
                             </svg>
                         </div>
                         <span class="fs15 fw500">Login</span>
-                    </a> {% endcomment %}
+                    </a>
                     {% endif %}
 
 
