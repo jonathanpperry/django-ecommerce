@@ -64,8 +64,9 @@
                         <span class="fs15 fw500">Shop</span>
                     </button>
 
+                    {% comment %} <
                     {% if user.is_authenticated %}
-                    {% comment %} <a type="button" role="button" href="{% url "account:logout" %}"
+                    a type="button" role="button" href="{% url "account:logout" %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -77,7 +78,7 @@
                         </div>
                         <span class="fs15 fw500">Logout</span>
                     </a> {% endcomment %}
-                    {% else %}
+                    {% comment %} {% else %}
                     <a type="button" role="button" href="{% url "account:login" %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
                         <div>
@@ -90,10 +91,10 @@
                         </div>
                         <span class="fs15 fw500">Login</span>
                     </a>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
 
 
-                    {% comment %} <a type="button" role="button" href="{% url "account:dashboard" %}"
+                    <a type="button" role="button" href="{% url "account:dashboard" %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
@@ -103,7 +104,7 @@
                             </svg>
                         </div>
                         <span class="fs15 fw500">Account</span>
-                    </a> {% endcomment %}
+                    </a>
 
                     <a type="button" role="button" href="{% url "basket:basket_summary" %}"
                         class="btn btn-outline-secondary border-0 basket-btn">
